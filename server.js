@@ -14,8 +14,8 @@ server.post("/alt", (req, res, next) => {
   res.status(200).jsonp(altDb);
 });
 
-server.listen(4201, () => {
-  console.log("JSON Server is running");
+server.listen(process.env.PORT || 4201, () => {
+  console.log("JSON Server is running", process.env.PORT || 4201);
 });
 
 function seedAnaTablo(req, res, next) {
