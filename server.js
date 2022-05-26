@@ -14,7 +14,7 @@ server.post("/alt", (req, res, next) => {
   res.status(200).jsonp(altDb);
 });
 
-server.listen(process.env.PORT || 4201, () => {
+server.listen(process.env.PORT || 3000, () => {
   console.log("JSON Server is running", process.env.PORT || 4201);
 });
 
