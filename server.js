@@ -1,9 +1,9 @@
 const jsonServer = require("json-server");
 const server = jsonServer.create();
 const middlewares = jsonServer.defaults();
-const anaDb = require("../angular-demo/src/assets/anaTablo.json");
-const altDb = require("../angular-demo/src/assets/altTablo.json");
-const arrays = require("./arrays");
+const anaDb = require("./assets/anaTablo.json");
+const altDb = require("./assets/altTablo.json");
+const arrays = require("./assets/arrays");
 server.use(middlewares);
 server.use(jsonServer.bodyParser);
 
