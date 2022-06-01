@@ -50,6 +50,7 @@ const arrayBody = [
   },
 ];
 server.post("/ana", seedAnaTablo, (req, res) => {
+  console.log("res.data", req.body);
   const filterLength = Object.values(req.body).reduce((a, b) => {
     if (Array.isArray(b)) {
       return a + b.length;
@@ -59,7 +60,9 @@ server.post("/ana", seedAnaTablo, (req, res) => {
 
   if (res.data.length > 0) {
     res.status(200).jsonp({
-      total: parseInt((arrayBody.length * 150) / (filterLength || 1)),
+      total: req.body.rows
+        ? req.body.rows
+        : parseInt((arrayBody.length * 150) / (filterLength || 1)),
       data: res.data,
     });
   } else {
